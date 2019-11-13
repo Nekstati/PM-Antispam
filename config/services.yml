@@ -1,0 +1,13 @@
+services:
+
+    nekstati.PMAntispam.listener:
+        class: nekstati\PMAntispam\event\listener
+        arguments:
+            - '@dbal.conn'
+            - '@config'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '%core.root_path%'
+        tags:
+            - { name: event.listener }
